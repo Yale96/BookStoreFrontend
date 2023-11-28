@@ -16,14 +16,14 @@
     });
   
     const fetchBooks = async () => {
-      const response = await fetch('http://your-csharp-api-url/api/books');
+      const response = await fetch('https://localhost:7125/api/books');
       if (response.ok) {
         books = await response.json();
       }
     };
   
     const addBook = async () => {
-      const response = await fetch('http://your-csharp-api-url/api/books', {
+      const response = await fetch('https://localhost:7125/api/books', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
