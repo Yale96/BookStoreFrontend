@@ -1,21 +1,21 @@
-<script>
-    import { onMount } from "svelte";
-    import 'bootstrap/dist/css/bootstrap.min.css';
-  
-    let books = [];
-  
-    // Fetch data from the C# backend when the component mounts
-    onMount(async () => {
-      const response = await fetch("https://localhost:7125/api/books");
+<script lang="ts">
+  import { onMount } from 'svelte';
+  import 'bootstrap/dist/css/bootstrap.min.css';
+
+  let books: Array<Book> = [];
+
+  // Fetch data from the C# backend when the component mounts
+  onMount(async () => {
+      const response = await fetch('https://localhost:7125/api/books');
       if (response.ok) {
-        books = await response.json();
+          books = await response.json();
       }
-    });
-  </script>
-  
-  <main>
-    <h1>Book List</h1>
-    <table class="table">
+  });
+</script>
+
+<main class="container mt-5">
+    <h1 class="mb-4">Get the Full Book List</h1>
+    <table class="table table-striped">
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -40,11 +40,10 @@
       </tbody>
     </table>
   </main>
-  
-  <style>
-    main {
+
+<style>
+  main {
       text-align: center;
       margin: 2em;
-    }
-  </style>
-  
+  }
+</style>
