@@ -8,7 +8,6 @@
       description: '',
       author: '',
       numberOfPages: 0,
-      // Add more properties as needed
   };
 
   onMount(async () => {

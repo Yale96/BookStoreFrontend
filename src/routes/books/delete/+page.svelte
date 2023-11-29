@@ -16,10 +16,6 @@
       }
     };
   
-    const editBook = (id) => {
-      // Implement editBook functionality if needed
-    };
-  
     const deleteBook = (id) => {
       deletingBook = books.find(book => book.id === id);
     };
@@ -30,7 +26,6 @@
       });
   
       if (response.ok) {
-        // Fetch the updated list of books after deletion
         await fetchBooks();
         deletingBook = null;
       } else {
@@ -46,7 +41,6 @@
   <main class="container mt-5">
     <h1 class="mb-4">Delete Books</h1>
     <table class="table">
-      <!-- Table header as before -->
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -54,20 +48,17 @@
           <th scope="col">Description</th>
           <th scope="col">Author</th>
           <th scope="col">Number of Pages</th>
-          <!-- Add more columns for other properties -->
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         {#each books as book (book.id)}
           <tr>
-            <!-- Table cells as before -->
             <th scope="row">{book.id}</th>
             <td>{book.title}</td>
             <td>{book.description}</td>
             <td>{book.author}</td>
             <td>{book.numberOfPages}</td>
-            <!-- Add more cells for other properties -->
             <td>
               <button on:click={() => deleteBook(book.id)} class="btn btn-danger btn-sm">Delete</button>
             </td>

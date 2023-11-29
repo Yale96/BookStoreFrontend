@@ -4,7 +4,7 @@
 
   let books: Array<Book> = [];
 
-  // Fetch data from the C# backend when the component mounts
+  // Get data from the C# backend when the component mounts
   onMount(async () => {
       const response = await fetch('https://localhost:7125/api/books');
       if (response.ok) {
@@ -23,7 +23,6 @@
           <th scope="col">Description</th>
           <th scope="col">Author</th>
           <th scope="col">Number of Pages</th>
-          <!-- Add more columns for other properties -->
         </tr>
       </thead>
       <tbody>
@@ -34,7 +33,6 @@
             <td>{book.description}</td>
             <td>{book.author}</td>
             <td>{book.numberOfPages}</td>
-            <!-- Add more cells for other properties -->
           </tr>
         {/each}
       </tbody>

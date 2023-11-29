@@ -42,7 +42,6 @@
   <main class="container mt-5">
     <h1 class="mb-4">Edit Books</h1>
     <table class="table">
-      <!-- Table header as before -->
       <thead>
         <tr>
           <th scope="col">ID</th>
@@ -50,20 +49,17 @@
           <th scope="col">Description</th>
           <th scope="col">Author</th>
           <th scope="col">Number of Pages</th>
-          <!-- Add more columns for other properties -->
           <th scope="col">Actions</th>
         </tr>
       </thead>
       <tbody>
         {#each books as book (book.id)}
           <tr>
-            <!-- Table cells as before -->
             <th scope="row">{book.id}</th>
             <td>{book.title}</td>
             <td>{book.description}</td>
             <td>{book.author}</td>
             <td>{book.numberOfPages}</td>
-            <!-- Add more cells for other properties -->
             <td>
               <button on:click={() => editBook(book.id)} class="btn btn-warning btn-sm">Edit</button>
             </td>
@@ -98,9 +94,6 @@
           <label class="form-label">Number of Pages:</label>
           <input type="number" class="form-control" bind:value={editingBook.numberOfPages} required />
         </div>
-  
-        <!-- Add more input fields for other properties -->
-  
         <button type="submit" class="btn btn-primary">Update Book</button>
       </form>
     {/if}
